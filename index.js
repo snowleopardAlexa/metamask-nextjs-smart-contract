@@ -106,6 +106,7 @@
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const signer = provider.getSigner() // this is going to get the connected account
       const contract = new ethers.Contract(contractAddress, abi, signer)
+      await contract.store(42)
    }
 
    // export functions
