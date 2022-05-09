@@ -1,17 +1,13 @@
    const { ethers } = require("ethers")
    
    // connect to metamask
-   function connect() {
+   async function connect() {
     if (typeof window.ethereum !== "undefined") {
       await ethereum.request({ method: "eth_requestAccounts" })
      }
    }
    // send transactions
    async function execute() {
-      // address
-      // contract ABI (blueprint to interact with a contract)
-      // function
-      // node connection
       const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
       const abi =  [
         {
@@ -110,7 +106,7 @@
    }
 
    // export functions
-   module.exxports = {
+   module.exports = {
        connect,
        execute,
    }
