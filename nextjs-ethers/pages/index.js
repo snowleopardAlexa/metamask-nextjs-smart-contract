@@ -1,8 +1,24 @@
+import { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+// connect to metamask
+// execute function
 
 export default function Home() {
+
+  const [isConnected, setIsConnect] = useState(false)
+  
+  async function connect() {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        await ethereum.request({ method: "eth_requestAccounts"})
+      } catch(e) {
+        console.log(e)
+      }
+    }
+  }
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,7 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-     
+     <h1>hello alexa</h1>
 
     </div>
   )
