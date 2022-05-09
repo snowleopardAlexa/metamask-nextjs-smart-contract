@@ -102,6 +102,8 @@
           "type": "function"
         }
       ]
+      // stick metamask to ethers
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
    }
 
    // export functions
